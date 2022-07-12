@@ -8,4 +8,4 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmF5IiwiaWF0IjoxNjU3NjEwNzE5fQ.zmtXbs76kBVznyDY1b_B5iwkxpzBlb-OIIFB1WQF7II
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmF5IiwiaWF0IjoxNjU3NjExNDczfQ.sO2jRrJM3h2Ww2H_qZawmyg2nzUnNAMdB0y1oHFDU2g
