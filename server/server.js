@@ -15,15 +15,6 @@ app.get('/orders', authenticateToken, (req, res) => {
   res.json(result);
 });
 
-app.post('/login', (req, res) => {
-  // Authentication User
-  const username = req.body.username;
-  const user = { name: username };
-
-  const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
-  res.json({ accessToken: accessToken });
-});
-
 // middleware for authentication
 function authenticateToken(req, res, next) {
   // get request header -> authorization: Bearer Token
