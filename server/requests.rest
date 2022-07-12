@@ -1,0 +1,11 @@
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "Jay"
+}
+
+###
+
+GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmF5IiwiaWF0IjoxNjU3NjA5NjIxfQ.Rn7a8eg7vlAbglsnnDHjUCFGGg5HzJoKzhQr-lK4xac
