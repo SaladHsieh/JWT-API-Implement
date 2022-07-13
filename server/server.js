@@ -3,12 +3,10 @@ require('dotenv').config();
 const port = 3000;
 const express = require('express');
 const app = express();
-const jwt = require('jsonwebtoken');
 const authenticateToken = require('./middlewares/auth');
+const orders = require('./utils/data/example');
 
 app.use(express.json());
-
-const orders = require('./utils/data/example');
 
 app.get('/orders', authenticateToken, (req, res) => {
   // have access to user (req.user) from authenticateToken middleware
