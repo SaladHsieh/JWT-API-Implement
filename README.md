@@ -4,6 +4,8 @@ this API implement has use `express`, `jsonwebtoken`, `nodemon` and `dotenv`
 
 ## Architecture
 
+![](https://github.com/SaladHsieh/JWT-API-Implement/blob/main/images/jwt.png)
+
 ## Server
 
 authServer.js for auth purpose
