@@ -1,8 +1,19 @@
+POST http://localhost:4000/user/sign-up
+Content-Type: application/json
+
+{
+  "username": "Jay",
+  "password": "password"
+}
+
+###
+
 POST http://localhost:4000/login
 Content-Type: application/json
 
 {
-  "username": "Jay"
+  "username": "Jay",
+  "password": "password"
 }
 
 ###
@@ -11,7 +22,7 @@ POST http://localhost:4000/get-refresh-token
 Content-Type: application/json
 
 {
-  "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmF5IiwiaWF0IjoxNjU3Njg0NzQ3LCJleHAiOjE2NjAyNzY3NDd9.4Tm9OsEu_e18r4pHTPaaSTNllXdrGA2uHZSYRj9le-k"
+  "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmF5IiwiaWF0IjoxNjU3NzA4NjIxLCJleHAiOjE2NjAzMDA2MjF9.FTx08z8GTg-DU7lZ3UXrAQ85CR32H-lnoo6p_3cNTPc"
 }
 
 ###
@@ -20,10 +31,10 @@ DELETE http://localhost:4000/logout
 Content-Type: application/json
 
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmF5IiwiaWF0IjoxNjU3Njg0NzQ3LCJleHAiOjE2NjAyNzY3NDd9.4Tm9OsEu_e18r4pHTPaaSTNllXdrGA2uHZSYRj9le-k"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmF5IiwiaWF0IjoxNjU3NzA4NjIxLCJleHAiOjE2NjAzMDA2MjF9.FTx08z8GTg-DU7lZ3UXrAQ85CR32H-lnoo6p_3cNTPc"
 }
 
 ###
 
 GET http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmF5IiwiaWF0IjoxNjU3Njg0NzczLCJleHAiOjE2NTc2ODQ3ODh9.qW3-wMqtMr115Y24T-SPAS70EkdlX88mAAsYU-tVRak
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmF5IiwiaWF0IjoxNjU3NzA4NjQ1LCJleHAiOjE2NTc3MDg2NjB9.BHUgdVSgoSiXmBfQ6y5zI2jnwbeH5m-Vt42lMigi0Pk
