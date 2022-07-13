@@ -4,14 +4,25 @@ const port = 4000;
 const express = require('express');
 const app = express();
 const jwt = require('jsonwebtoken');
-const authenticateToken = require('./middlewares/auth');
+const bcrypt = require('bcrypt');
 
 app.use(express.json());
 
-const orders = require('./utils/data/example');
-
 // store refresh token locally
 let refreshTokens = [];
+
+const users = [];
+
+app.post('/user/sign-up', async (req, res) => {
+  try {
+    const hashPassword = await bcrypt.hash(req.body.password, 10);
+    const user = { username: req.body.username, password: hashPassword };
+    users.push(user);
+    res.status(201).send();
+  } catch {
+    res.status(500).send();
+  }
+});
 
 app.post('/get-refresh-token', (req, res) => {
   const refreshToken = req.body.token;
@@ -30,10 +41,22 @@ app.delete('/logout', (req, res) => {
   res.sendStatus(204);
 });
 
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res, next) => {
   // Authentication User
-  const username = req.body.username;
-  const user = { name: username };
+  const findUser = users.find((user) => user.username == req.body.username);
+  if (findUser == null) return res.status(400).send('Can not find the user');
+  try {
+    if (await bcrypt.compare(req.body.password, findUser.password)) {
+      // res.send('Success');
+      next();
+    } else {
+      res.send('Not allowed');
+    }
+  } catch {
+    res.status(500).send;
+  }
+
+  const user = { name: findUser.username };
 
   const accessToken = generateAccessToken(user);
   const refreshToken = generateRefreshToken(user);
