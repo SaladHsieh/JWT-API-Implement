@@ -24,7 +24,7 @@ app.post('/user/sign-up', async (req, res) => {
   }
 });
 
-app.post('/get-refresh-token', (req, res) => {
+app.post('/user/get-refresh-token', (req, res) => {
   const refreshToken = req.body.token;
   if (refreshToken == null) return res.sendStatus(401);
   if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403);
@@ -36,12 +36,12 @@ app.post('/get-refresh-token', (req, res) => {
   });
 });
 
-app.delete('/logout', (req, res) => {
+app.delete('/user/logout', (req, res) => {
   refreshTokens = refreshTokens.filter((token) => token !== req.body.token);
   res.sendStatus(204);
 });
 
-app.post('/login', async (req, res, next) => {
+app.post('/user/login', async (req, res, next) => {
   // Authentication User
   const findUser = users.find((user) => user.username == req.body.username);
   if (findUser == null) return res.status(400).send('Can not find the user');
