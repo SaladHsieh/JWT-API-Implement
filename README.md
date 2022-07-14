@@ -29,3 +29,7 @@ server.js for other purpose
 
 - Postman
 - Rest Client (VS code extension)
+
+## Verify JWT Tool
+
+https://jwt.io/
